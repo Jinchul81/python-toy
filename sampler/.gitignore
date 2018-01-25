@@ -1,0 +1,14 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build
+
+# VIM's temporal files
+*.sw[po]
+
+# temporal files
+*.bak

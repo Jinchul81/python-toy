@@ -1,0 +1,4 @@
+# s002_dml_demo_set_001.job
+type=command
+dependencies=s001_dml_dewip_cust_annv_lst,s001_dml_dewip_svc_fmly_rel,s001_dml_dewip_svc
+command=hive -f ../sql/s002_dml_demo_set_001.sql

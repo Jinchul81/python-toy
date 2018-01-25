@@ -1,0 +1,70 @@
+# The hostname and port are used to create
+# the url of the target web server
+hostname:
+port:
+
+# This is the start and end date of the workload
+start_date:
+end_date:
+
+# The timezone consists of time zone name
+# (e.g. UTC, EST, CST, GMT)
+# and UTC offset in the form +HHMM or --HHMM
+# (e.g., Asia/Seoul => GMT+0900)
+timezone: GMT+0900
+
+# The total number of http requests. The workload
+# is divided into days between start an end.
+num_requests:
+
+# The number of user instances created in the user pool
+num_users:
+
+# Piwik's site number
+# (c.f., https://plugins.piwik.org/SiteURLtrackingID)
+idsite:
+
+# (e.g., http://piwik/tracker?...)
+controller: tracker
+
+# Piwik's token auth is used to athenticate in API requests
+# (c.f., https://piwik.org/faq/general/faq_114/)
+token_auth:
+
+# Distribution of workload over time
+#
+# The way to obtain each hourly portion is calculated by
+# dividing the total divided by the total number of
+# allocated http requests.
+# For more details,
+# * All hours up to 0-23 must be present
+# * If you want to mean 0%, you only need to specify (e.g., 11: ,)
+# * Characters are meaningless and use only length. Hence,
+#   you can use any of the available characters
+traffic_distribution:
+  {
+    0:  +++++++++,
+    1:  +++++++,
+    2:  ++++,
+    3:  ++,
+    4:  ++,
+    5:  +,
+    6:  ++,
+    7:  ++,
+    8:  +++,
+    9:  ++++,
+    10: +++++,
+    11: ++++++,
+    12: +++++++,
+    13: ++++++++,
+    14: +++++++++,
+    15: +++++++++,
+    16: ++++++++++,
+    17: +++++++++++,
+    18: ++++++++++++,
+    19: ++++++++++++++,
+    20: ++++++++++++++++,
+    21: +++++++++++++++++,
+    22: +++++++++++++++,
+    23: +++++++++++++,
+  }

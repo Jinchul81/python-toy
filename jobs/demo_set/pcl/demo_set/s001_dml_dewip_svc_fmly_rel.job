@@ -1,0 +1,3 @@
+# s001_dml_dewip_svc_fmly_rel.job
+type=command
+command=hive -f ../sql/s001_dml_dewip_svc_fmly_rel.sql

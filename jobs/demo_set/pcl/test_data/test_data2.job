@@ -1,0 +1,3 @@
+# test_data2.job
+type=command
+command=hive -f ../sql/2.sql

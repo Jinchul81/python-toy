@@ -1,0 +1,29 @@
+group 'com.skt.dbp.wsdl'
+version '1.0-SNAPSHOT'
+
+apply plugin:'application'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-ws', version: '1.4.7.RELEASE'
+    compile group: 'wsdl4j', name: 'wsdl4j', version: '1.6.3'
+    compile group: 'xalan', name: 'xalan', version: '2.7.2'
+}
+
+// Hint from https://stackoverflow.com/questions/29379736/running-a-gradle-compiled-java-application-with-dependencies-via-the-java-comman
+task showCachedJars << {
+    configurations.compile.each { println it }
+}
+
+task libs(type: Sync) {
+    from configurations.runtime
+    into "$buildDir/libs"
+}
+
+mainClassName='com.skt.dbp.launcher.WSDLClient'

@@ -1,0 +1,4 @@
+# test_data.job
+type=command
+dependencies=test_data1,test_data2,test_data3
+command=echo "test data created."

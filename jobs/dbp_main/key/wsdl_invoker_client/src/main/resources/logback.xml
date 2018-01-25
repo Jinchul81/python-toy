@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <logger name="org.springframework.web" level="WARN"/>
+    <logger name="o.s.ws.soap.saaj.SaajSoapMessageFactory" level="WARN"/>
+    <logger name="o.s.oxm.jaxb.Jaxb2Marshaller" level="WARN"/>
+    <logger name="com.skt.dbp.launcher.WSDLClient" level="INFO"/>
+<!--
+    <logger name="org.springframework.ws.client.MessageTracing.sent" level="TRACE"/>
+    <logger name="org.springframework.ws.client.MessageTracing.received" level="TRACE"/>
+    <logger name="org.springframework.ws.server.MessageTracing" level="TRACE"/>
+-->
+</configuration>

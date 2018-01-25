@@ -1,0 +1,12 @@
+*.swp
+*.tmp
+*.bak
+*.swp
+*.log
+*.jar
+*.zip
+*.tar
+*.tgz
+*.tar.gz
+*.csv
+*.pyc
