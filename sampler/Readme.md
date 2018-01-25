@@ -1,8 +1,8 @@
 ## Sampler
 
-### 목적
+### Purpose
 
-Dummy data를 만들어 Http request를 통해 workload를 발생시킵니다.
+Request a bunch of HTTP workloads using generated dummy data on-the-fly
 
 ### Dependencies
 
@@ -15,7 +15,7 @@ pyyaml, termcolor, aiohttp, names
   $ pip3 install names
 ```
 
-### 사용방법
+### Usage
 
 ```
 $ python3.6 main.py -h
@@ -29,7 +29,7 @@ optional arguments:
                         use custom yaml config (default: conf/dev.yaml)
 ```
 
-Default yaml config를 이용하는 예,
+Example with default yaml config,
 
 ```
 $ python3.6 main.py
@@ -38,14 +38,15 @@ $ python3.6 main.py
 [[2017/11/20 06:22:56]] run(...) 212.28 sec
 ```
 
-Local web server를 이용하여 테스팅을 하는 예,
+Example on local web server,
 
 ```
 $ python3.6 tests/server.py &
 $ python3.6 main.py -c conf/local.yaml
 ```
 
-설정은 conf디렉토리에 있는 .yaml을 이용합니다. dev.yaml은 개발서버를 위한 버전입니다. 다른 custom yaml을 만들어 추가하셔도 됩니다.
+Property information relies on .yaml in conf directory. dev.yaml is for development version.
+You may create your own custom yaml.
 
 ```
 # The hostname and port are used to create
@@ -120,15 +121,15 @@ traffic_distribution:
   }
 ```
 
-### 테스트
+### Test
 
-다음과 같은 형태의 URL을 생성합니다.
+Here is an example URL which was generated internally,
 
 ```
 http://piwik/piwik.php?action_name=&idsite=1&rec=1&r=100224&h=14&m=26&s=7&url=http://localhost:8080&uid=f2ed9618-a0a0-4ce8-844c-f66435a599ee&_id=943d87d1f567f0b0&token_auth=aa4559b9f29b1351124f58255c303bfa&cdt=1509889669&_idts=1510549337&_idvc=1&_idn=0&_refts=0&_viewts=1510549337&send_image=1&pdf=1&qt=0&realp=0&wma=0&dir=0&fla=0&java=0&gears=0&ag=0&cookie=1&res=2560x1440&_cvar={"1": ["birthday", "1957-03-23"], "2": ["gender", "female"], "3": ["carrier", "LGT"], "4": ["email", "linda@yahoo.com"], "5": ["auth_id", "linda@yahoo.com"], "6": ["cell_mac", "00:16:3e:13:33:1d"], "7": ["ad_vender", 8], "8": ["uuid", "f2ed9618-a0a0-4ce8-844c-f66435a599ee"]}&gt_ms=23&pv_id=OulOts
 ```
 
-다음과 같은 형태의 방문 행태를 timeline view/table를 통해 확인 할 수 있습니다.
+Visit information/pattern is tracked by timeline view or table.
 #### * Timeline view
 
 ![Screenshot](images/2.png)
@@ -136,11 +137,10 @@ http://piwik/piwik.php?action_name=&idsite=1&rec=1&r=100224&h=14&m=26&s=7&url=ht
 
 ![Screenshot](images/1.png)
 
-접속한 방문자의 정보는 Custom variable 항목에 담겨서 전달이 됩니다.
+Visitor information is delivered via custom variable.
 
 ![Screenshot](images/3.png)
 
-접속자의 정보를 좀 더 들여다 보면 user id로 UUID를 가지며, 그 외에 custom variable, action 또는 custom event등을 전달 받을 수 있습니다.
-아래의 경우는 custom variable의 sample을 확인 할 수 있습니다.
+User id comes from UUID. Custome variable, action or custom event can be received.
 
 ![Screenshot](images/4.png)
